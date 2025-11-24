@@ -15,11 +15,15 @@
   "type": "commonjs",
   "main": "index.html",
   "scripts": {
-    "build": "webpack --mode production js/scripts.js -o ./main.js",
-    "dev": "webpack --mode development js/scripts.js -o ./main.js --watch"
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development --watch"
   },
   "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/plugin-transform-runtime": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
     "@eslint/js": "^9.39.1",
+    "babel-loader": "^10.0.0",
     "eslint": "^9.39.1",
     "globals": "^16.5.0",
     "webpack": "^5.103.0",
