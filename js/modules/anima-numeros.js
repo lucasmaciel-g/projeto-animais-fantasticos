@@ -1,6 +1,6 @@
 export default function animaNumeros() {
   function realizaAnimacao() {
-    const numeros = document.querySelectorAll('[data-numero]');
+    const numeros = document.querySelectorAll("[data-numero]");
     numeros.forEach((numero) => {
       const total = +numero.innerText;
       const incremento = Math.floor(total / 200);
@@ -14,18 +14,17 @@ export default function animaNumeros() {
         numero.innerText = start;
       }, 10 * Math.random);
     });
-
   }
-  
+
   function handleMutation(mutation) {
     console.log(mutation);
-    if (mutation[0].target.classList.contains('ativo')) {
+    if (mutation[0].target.classList.contains("ativo")) {
       realizaAnimacao();
       observer.disconnect();
     }
   }
-  const sectionNumerosAnimais = document.querySelector('.numeros');
-  
+  const sectionNumerosAnimais = document.querySelector(".numeros");
+
   const observer = new MutationObserver(handleMutation);
   observer.observe(sectionNumerosAnimais, { attributes: true });
 }
